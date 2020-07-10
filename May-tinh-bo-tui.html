@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table {
+            width: 300px;
+            height: 200px;
+            text-align: center;
+        }
+        table,tr,td{
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            width: 40px;
+        }
+        input[type="button"] {
+            width: 100%;
+            height: 100%;
+        }
+        .result {
+            height: 20px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <td colspan="7" style="text-align: right;">
+        <input class="result" type="text" name="" id="input">
+    </td>
+    <tr>
+        <td>Rad</td>
+        <td></td>
+        <td>x!</td>
+        <td>(</td>
+        <td>)</td>
+        <td>%</td>
+        <td><input type="button" value="AC" onclick="deleteInput()"></td>
+    </tr>
+    <tr>
+        <td>Inv</td>
+        <td>sin</td>
+        <td>In</td>
+        <td><input type="button" name="" value="7" onclick="getInput(7)"></td>
+        <td><input type="button" name="" value="8" onclick="getInput(8)"></td>
+        <td><input type="button" name="" value="9" onclick="getInput(9)"></td>
+        <td><input type="button" name="" value="÷" onclick="getInput(/)"></td>
+    </tr>
+    <tr>
+        <td>π</td>
+        <td>cos</td>
+        <td>log</td>
+        <td><input type="button" name="" value="4" onclick="getInput(4)"></td>
+        <td><input type="button" name="" value="5" onclick="getInput(5)"></td>
+        <td><input type="button" name="" value="6" onclick="getInput(6)"></td>
+        <td><input type="button" name="" value="X" onclick="getInput('*')"></td>
+    </tr>
+    <tr>
+        <td>e</td>
+        <td>tan</td>
+        <td>√</td>
+        <td><input type="button" value="1" onclick="getInput(1)"></td>
+        <td><input type="button" value="2" onclick="getInput(2)"></td>
+        <td><input type="button" value="3" onclick="getInput(3)"></td>
+        <td><input type="button" value="-" onclick="getInput('-')"></td>
+    </tr>
+    <tr>
+        <td>Ans</td>
+        <td>EXP</td>
+        <td>x^y</td>
+        <td><input type="button" value="0" onclick="getInput(0)"></td>
+        <td>.</td>
+        <td><input type="button" value="=" onclick="equal()"></td>
+        <td><input type="button" value="+" onclick="getInput('+')"> </td>
+    </tr>
+</table>
+<script>
+    function getInput(val) {
+        document.getElementById("input").value += val;
+        }
+    function equal() {
+        let a = document.getElementById("input").value;
+        result = eval(a);
+        document.getElementById("input").value = result;
+    }
+    function deleteInput() {
+        document.getElementById("input").value = "";
+    }
+</script>
+</body>
+</html>
